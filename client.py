@@ -25,7 +25,7 @@ MSG_MAX_LEN = 35
 def CenterWindow(win):
     center_x = int(SCREEN_WIDTH / 2 - win.winfo_reqwidth() / 2)
     center_y = int(SCREEN_HEIGHT / 2 - win.winfo_reqheight() / 2)
-    return f'+{center_x}+{center_y}'  # Placing the window at the middle of the screen.
+    return '+' + center_x + '+' + center_y  # Placing the window at the middle of the screen.
 
 
 window.geometry(CenterWindow(window))  # Placing the window at the middle of the screen.
@@ -351,10 +351,10 @@ def HandleWindows():
             HandleWindows()
 
         return_button = Button(window, image=RETURN_ICON, command=BackToSearch, highlightbackground=BACKGROUND_COLOR).pack(anchor="w")
-        Label(window, text=f"{PROFILE['name']}'s Profile", font=('David', 20, 'underline'), bg=BACKGROUND_COLOR).pack()
-        header_label = Label(window, text=f'{PROFILE["name"]}' + "'" + 's Profile', bg=BACKGROUND_COLOR)
+        Label(window, text=PROFILE['name'] + "'s Profile", font=('David', 20, 'underline'), bg=BACKGROUND_COLOR).pack()
+        header_label = Label(window, text=PROFILE['name'] + "'s Profile", bg=BACKGROUND_COLOR)
         header_label.pack()
-        friends_label = Label(window, text=f'Friends: {PROFILE["friends_count"]}', bg=BACKGROUND_COLOR)
+        friends_label = Label(window, text="Friends: " + PROFILE["friends_count"], bg=BACKGROUND_COLOR)
         friends_label.pack()
 
         def CreateFriendship():
@@ -378,7 +378,7 @@ def HandleWindows():
             HandleWindows()
 
         return_button = Button(window, image=RETURN_ICON, command=BackToProfile, highlightbackground=BACKGROUND_COLOR).pack(anchor="w")
-        Label(window, text=f"Chat with {PROFILE['name']}", font=('David', 20, 'underline'), bg=BACKGROUND_COLOR).pack()
+        Label(window, text="Chat with "+ PROFILE['name'], font=('David', 20, 'underline'), bg=BACKGROUND_COLOR).pack()
         wrapper = LabelFrame(window)
         my_canvas = Canvas(wrapper)
         my_canvas.pack(side=LEFT)
